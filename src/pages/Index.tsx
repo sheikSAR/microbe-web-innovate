@@ -9,16 +9,34 @@ import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Awards from '../components/Awards';
 import Contact from '../components/Contact';
-import Navigation from '../components/Navigation';
+import FloatingNavigation from '../components/FloatingNavigation';
+import FloatingMicrobes from '../components/FloatingMicrobes';
+import VirtualLabScene from '../components/VirtualLabScene';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navigation />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
+      {/* Global 3D Background Elements */}
+      <FloatingMicrobes />
+      
+      {/* Floating Navigation */}
+      <FloatingNavigation />
+      
+      {/* Main Content */}
       <Hero />
       <About />
       <Education />
-      <Research />
+      
+      {/* Enhanced Research Section with Virtual Lab */}
+      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-transparent backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Research />
+          <div className="mt-16">
+            <VirtualLabScene />
+          </div>
+        </div>
+      </section>
+      
       <NCBISequences />
       <Experience />
       <Skills />
