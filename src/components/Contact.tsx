@@ -67,26 +67,26 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-800">
+    <section id="contact" className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Contact Me</h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Me</h2>
+          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Let's collaborate on research, discuss opportunities, or share knowledge in microbiology and biotechnology
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-900/80 backdrop-blur-sm border-gray-600/50">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-white">Send a Message</CardTitle>
+              <CardTitle className="text-2xl font-semibold text-gray-900">Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name
                   </label>
                   <Input
@@ -96,13 +96,13 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-400"
+                    className="w-full"
                     placeholder="Your full name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email
                   </label>
                   <Input
@@ -112,13 +112,13 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-400"
+                    className="w-full"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
                   <Input
@@ -128,13 +128,13 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-400"
+                    className="w-full"
                     placeholder="Research collaboration, questions, etc."
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
                   <Textarea
@@ -143,7 +143,7 @@ const Contact = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full min-h-[120px] bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-400"
+                    className="w-full min-h-[120px]"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -160,26 +160,26 @@ const Contact = () => {
 
           {/* Professional Links & CV Download */}
           <div className="space-y-6">
-            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-900/80 backdrop-blur-sm border-gray-600/50">
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-white">Professional Profiles</CardTitle>
+                <CardTitle className="text-2xl font-semibold text-gray-900">Professional Profiles</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {professionalLinks.map((link, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                    <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
                       <div className="flex items-center space-x-3">
-                        <link.icon size={20} className="text-teal-400" />
+                        <link.icon size={20} className="text-teal-600" />
                         <div>
-                          <div className="font-medium text-white">{link.name}</div>
-                          <div className="text-sm text-gray-400">{link.description}</div>
+                          <div className="font-medium text-gray-900">{link.name}</div>
+                          <div className="text-sm text-gray-600">{link.description}</div>
                         </div>
                       </div>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => window.open(link.url, '_blank')}
-                        className="text-teal-400 hover:text-teal-300 hover:bg-gray-700/50"
+                        className="text-teal-600 hover:text-teal-700"
                       >
                         <ExternalLink size={16} />
                       </Button>
@@ -189,12 +189,12 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-900/80 backdrop-blur-sm border-gray-600/50">
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-teal-50 to-blue-50">
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-white">Download CV</CardTitle>
+                <CardTitle className="text-2xl font-semibold text-gray-900">Download CV</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-600 mb-4">
                   Download my complete curriculum vitae for detailed information about my academic background, research experience, and publications.
                 </p>
                 <Button
@@ -212,14 +212,14 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-900/80 backdrop-blur-sm border-gray-600/50">
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-teal-900/50 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🧬</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Research Collaboration</h3>
-                  <p className="text-sm text-gray-300">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Research Collaboration</h3>
+                  <p className="text-sm text-gray-600">
                     Open to collaboration opportunities in actinomycetes research, agricultural microbiology, and biotechnology applications.
                   </p>
                 </div>

@@ -47,43 +47,43 @@ const Research = () => {
   ];
 
   return (
-    <section id="research" className="py-20 bg-gray-900">
+    <section id="research" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Research & Publications</h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Research & Publications</h2>
+          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Contributing to scientific knowledge through rigorous research and peer-reviewed publications
           </p>
         </div>
 
         {/* Publications */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">Publications</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Publications</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {publications.map((pub, index) => (
-              <Card key={index} className="bg-gray-700/80 border-gray-600/50 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full backdrop-blur-sm">
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <span className="px-3 py-1 bg-teal-600/20 text-teal-300 text-sm font-medium rounded-full border border-teal-500/30">
+                    <span className="px-3 py-1 bg-teal-100 text-teal-800 text-sm font-medium rounded-full">
                       {pub.type}
                     </span>
-                    <span className="text-sm text-gray-400">{pub.year}</span>
+                    <span className="text-sm text-gray-500">{pub.year}</span>
                   </div>
-                  <CardTitle className="text-lg font-semibold text-white leading-tight">
+                  <CardTitle className="text-lg font-semibold text-gray-900 leading-tight">
                     {pub.title}
                   </CardTitle>
-                  <p className="text-teal-400 font-medium">{pub.journal}</p>
+                  <p className="text-teal-600 font-medium">{pub.journal}</p>
                 </CardHeader>
                 <CardContent className="flex flex-col justify-between flex-grow">
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     {pub.description}
                   </p>
                   {pub.doi && (
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full text-teal-400 border-teal-500/50 hover:bg-teal-600/20 hover:text-teal-300"
+                      className="w-full text-teal-600 border-teal-600 hover:bg-teal-50"
                       onClick={() => window.open(`https://doi.org/${pub.doi}`, '_blank')}
                     >
                       <ExternalLink size={16} className="mr-2" />
@@ -98,27 +98,27 @@ const Research = () => {
 
         {/* Research Projects */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-8">Research Projects</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Research Projects</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-gray-700/80 border-gray-600/50 shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-teal-500 backdrop-blur-sm">
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-teal-600">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <span className={`px-3 py-1 text-sm font-medium rounded-full border ${
+                    <span className={`px-3 py-1 text-sm font-medium rounded-full ${
                       project.status === 'Ongoing' 
-                        ? 'bg-green-600/20 text-green-300 border-green-500/30' 
-                        : 'bg-blue-600/20 text-blue-300 border-blue-500/30'
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-blue-100 text-blue-800'
                     }`}>
                       {project.status}
                     </span>
-                    <span className="text-sm text-gray-400">{project.duration}</span>
+                    <span className="text-sm text-gray-500">{project.duration}</span>
                   </div>
-                  <CardTitle className="text-xl font-semibold text-white">
+                  <CardTitle className="text-xl font-semibold text-gray-900">
                     {project.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
                 </CardContent>
               </Card>
             ))}

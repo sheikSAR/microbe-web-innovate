@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -64,10 +65,10 @@ const Awards = () => {
 
   const getTypeColor = (type: string) => {
     const colorMap = {
-      Award: "bg-yellow-900/50 text-yellow-300 border border-yellow-500/30",
-      Presentation: "bg-blue-900/50 text-blue-300 border border-blue-500/30"
+      Award: "bg-yellow-100 text-yellow-800",
+      Presentation: "bg-blue-100 text-blue-800"
     };
-    return colorMap[type as keyof typeof colorMap] || "bg-gray-800 text-gray-300";
+    return colorMap[type as keyof typeof colorMap] || "bg-gray-100 text-gray-800";
   };
 
   const getCategoryColor = (category: string) => {
@@ -79,36 +80,36 @@ const Awards = () => {
   };
 
   return (
-    <section id="awards" className="py-20 bg-gray-900">
+    <section id="awards" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Awards & Presentations</h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Awards & Presentations</h2>
+          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Recognition for outstanding contributions to microbiology research and scientific communication
           </p>
         </div>
 
         {/* Awards Section */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">Awards & Recognition</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Awards & Recognition</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {awards.map((award, index) => (
-              <Card key={index} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 ${getCategoryColor(award.category)} bg-gray-800/80 backdrop-blur-sm border-gray-600/50`}>
+              <Card key={index} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 ${getCategoryColor(award.category)}`}>
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <Badge className={getTypeColor(award.type)}>
                       {award.type}
                     </Badge>
-                    <span className="text-sm text-gray-400">{award.year}</span>
+                    <span className="text-sm text-gray-500">{award.year}</span>
                   </div>
-                  <CardTitle className="text-lg font-semibold text-white">
+                  <CardTitle className="text-lg font-semibold text-gray-900">
                     {award.title}
                   </CardTitle>
-                  <div className="text-teal-400 font-medium">{award.organization}</div>
+                  <div className="text-teal-600 font-medium">{award.organization}</div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 leading-relaxed">{award.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{award.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -117,24 +118,24 @@ const Awards = () => {
 
         {/* Presentations Section */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-8">Conference Presentations</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Conference Presentations</h3>
           <div className="space-y-4">
             {presentations.map((presentation, index) => (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-800/80 backdrop-blur-sm border-gray-600/50">
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <h4 className="text-lg font-semibold text-white">{presentation.title}</h4>
-                        <Badge variant="outline" className="text-blue-400 border-blue-500/50 bg-blue-900/30">
+                        <h4 className="text-lg font-semibold text-gray-900">{presentation.title}</h4>
+                        <Badge variant="outline" className="text-blue-600 border-blue-600">
                           {presentation.type}
                         </Badge>
                       </div>
-                      <div className="text-teal-400 font-medium mb-1">{presentation.event}</div>
-                      <div className="text-sm text-gray-400">{presentation.location}</div>
+                      <div className="text-teal-600 font-medium mb-1">{presentation.event}</div>
+                      <div className="text-sm text-gray-500">{presentation.location}</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-lg font-semibold text-white">{presentation.year}</div>
+                      <div className="text-lg font-semibold text-gray-900">{presentation.year}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -145,25 +146,25 @@ const Awards = () => {
 
         {/* Statistics Summary */}
         <div className="mt-12">
-          <Card className="max-w-4xl mx-auto p-6 bg-gray-800/80 backdrop-blur-sm border-gray-600/50">
+          <Card className="max-w-4xl mx-auto p-6 bg-gradient-to-r from-yellow-50 via-blue-50 to-teal-50">
             <CardContent className="p-0">
-              <h3 className="text-2xl font-semibold text-white mb-6 text-center">Achievement Summary</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Achievement Summary</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{awards.filter(a => a.type === 'Award').length}</div>
-                  <div className="text-sm text-gray-400">Awards</div>
+                  <div className="text-3xl font-bold text-yellow-600">{awards.filter(a => a.type === 'Award').length}</div>
+                  <div className="text-sm text-gray-600">Awards</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">{presentations.length}</div>
-                  <div className="text-sm text-gray-400">Presentations</div>
+                  <div className="text-3xl font-bold text-blue-600">{presentations.length}</div>
+                  <div className="text-sm text-gray-600">Presentations</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-teal-400">7</div>
-                  <div className="text-sm text-gray-400">Conferences</div>
+                  <div className="text-3xl font-bold text-teal-600">7</div>
+                  <div className="text-sm text-gray-600">Conferences</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">3</div>
-                  <div className="text-sm text-gray-400">Years Active</div>
+                  <div className="text-3xl font-bold text-green-600">3</div>
+                  <div className="text-sm text-gray-600">Years Active</div>
                 </div>
               </div>
             </CardContent>
