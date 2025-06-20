@@ -15,7 +15,7 @@ import VirtualLabScene from '../components/VirtualLabScene';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
+    <div className="min-h-screen bg-gray-900">
       {/* Global 3D Background Elements */}
       <FloatingMicrobes />
       
@@ -28,7 +28,7 @@ const Index = () => {
       <Education />
       
       {/* Enhanced Research Section with Virtual Lab */}
-      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-transparent backdrop-blur-sm">
+      <section className="py-20 bg-gray-800/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Research />
           <div className="mt-16">

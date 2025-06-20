@@ -18,11 +18,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="fixed top-0 w-full bg-gray-800/90 backdrop-blur-sm z-50 shadow-sm border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-teal-800">Dr. T. Seenivasa Moorthy</h1>
+            <h1 className="text-xl font-bold text-teal-400">Dr. T. Seenivasa Moorthy</h1>
           </div>
           
           {/* Desktop Navigation */}
@@ -32,7 +32,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-teal-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -44,7 +44,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-teal-800"
+              className="text-gray-300 hover:text-teal-400"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -55,12 +55,12 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 shadow-lg border-t border-gray-700">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-teal-800 block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-300 hover:text-teal-400 block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
