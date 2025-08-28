@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroModern from '../components/HeroModern';
-import About from '../components/About';
+import AboutModern from '../components/AboutModern';
 import Education from '../components/Education';
 import Research from '../components/Research';
 import NCBISequences from '../components/NCBISequences';
@@ -17,9 +17,7 @@ const Index = () => {
       <NavigationModern />
       <HeroModern />
 
-      <AnimatedSection direction="up" delay={0.1}>
-        <About />
-      </AnimatedSection>
+      <AboutModern />
 
       <ParallaxElement speed={0.3}>
         <AnimatedSection direction="left" delay={0.2}>
