@@ -75,9 +75,10 @@ const HeroModern = () => {
         <ParticleSystemSimple />
       </div>
 
-      <div className="absolute inset-0 z-10 opacity-30">
+      {/* DNA Helix - Temporarily disabled for stability */}
+      {/* <div className="absolute inset-0 z-10 opacity-30">
         <DNAHelixSimple />
-      </div>
+      </div> */}
       
       {/* Floating Geometric Elements */}
       <div className="absolute inset-0 z-20 pointer-events-none">
