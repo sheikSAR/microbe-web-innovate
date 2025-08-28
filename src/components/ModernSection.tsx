@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Interactive3DCard from './3d/Interactive3DCard';
-import FloatingElements, { InteractiveBlob } from './3d/FloatingElements';
+import FloatingElementsSimple, { InteractiveBlobSimple } from './3d/FloatingElementsSimple';
 import { AnimatedSection, StaggerChildren } from './SmoothScroll';
 
 interface ModernSectionProps {
@@ -47,18 +47,18 @@ const ModernSection: React.FC<ModernSectionProps> = ({
     >
       {/* 3D Background Elements */}
       {has3DElements && (
-        <FloatingElements 
-          count={6} 
-          theme="biotech" 
-          className="opacity-30 z-0" 
+        <FloatingElementsSimple
+          count={6}
+          theme="biotech"
+          className="opacity-30 z-0"
         />
       )}
-      
+
       {/* Interactive Blob */}
       {hasBlob && (
-        <InteractiveBlob 
-          className="opacity-20 z-0" 
-          color="hsl(var(--primary))" 
+        <InteractiveBlobSimple
+          className="opacity-20 z-0"
+          color="hsl(var(--primary))"
         />
       )}
       
