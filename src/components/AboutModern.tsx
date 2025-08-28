@@ -39,7 +39,7 @@ const AboutModern = () => {
       title="About Dr. Moorthy"
       subtitle="A pioneering researcher dedicated to advancing microbial biotechnology for sustainable agricultural solutions."
       background="cyber"
-      has3DElements={true}
+      has3DElements={false}
       hasBlob={false}
     >
       {/* Main Content Grid */}
