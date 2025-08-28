@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import ParticleSystem from './3d/ParticleSystem';
-import DNAHelix3D from './3d/DNAHelix3D';
+import ParticleSystemSimple from './3d/ParticleSystemSimple';
+import DNAHelixSimple from './3d/DNAHelixSimple';
 
 const HeroModern = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -72,11 +72,11 @@ const HeroModern = () => {
     >
       {/* 3D Background Layers */}
       <div className="absolute inset-0 z-0">
-        <ParticleSystem />
+        <ParticleSystemSimple />
       </div>
-      
+
       <div className="absolute inset-0 z-10 opacity-30">
-        <DNAHelix3D />
+        <DNAHelixSimple />
       </div>
       
       {/* Floating Geometric Elements */}
